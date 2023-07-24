@@ -5,6 +5,10 @@ window.addEventListener("load", function() {
             console.log(json);
 
             const container = document.getElementById("container");
+            const astronautHeading = document.querySelector("h1");
+
+            // Bonus Mission #3 - add count of astronauts to page
+            astronautHeading.innerText += ` (${json.length})`
 
             for (let i = 0; i < json.length; i++) {
                 container.innerHTML += `
@@ -13,7 +17,10 @@ window.addEventListener("load", function() {
                                 <h3>${json[i].firstName} ${json[i].lastName}</h3>
                                 <ul>
                                     <li>Hours in space: ${json[i].hoursInSpace}</li>
-                                    <li>Active: ${json[i].active === true ? '<span style="color: green;">' + json[i].active + '</span>' : '<span style="color: red;">' + json[i].active + '</span>'}</li>
+                                    <li>Active: ${
+                                        // Bonus Mission #2 - change text color depending on if active status true or false
+                                        json[i].active === true ? '<span style="color: green;">' + json[i].active + '</span>' : '<span style="color: red;">' + json[i].active + '</span>'}
+                                    </li>
                                     <li>Skills: ${json[i].skills.join(", ")}</li>
                                 </ul>
                             </div>
