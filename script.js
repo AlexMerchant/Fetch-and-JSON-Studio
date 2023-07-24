@@ -1,4 +1,4 @@
-// TODO: add code here
+
 window.addEventListener("load", function() {
     this.fetch("https://handlers.education.launchcode.org/static/astronauts.json").then(function(response) {
         response.json().then(function(json) {
@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
                                 <h3>${json[i].firstName} ${json[i].lastName}</h3>
                                 <ul>
                                     <li>Hours in space: ${json[i].hoursInSpace}</li>
-                                    <li>Active: ${json[i].active}</li>
+                                    <li>Active: ${json[i].active === true ? '<span style="color: green;">' + json[i].active + '</span>' : '<span style="color: red;">' + json[i].active + '</span>'}</li>
                                     <li>Skills: ${json[i].skills.join(", ")}</li>
                                 </ul>
                             </div>
