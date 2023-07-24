@@ -4,6 +4,9 @@ window.addEventListener("load", function() {
         response.json().then(function(json) {
             console.log(json);
 
+            // Bonus Mission #1 - sort astronauts in descending order by hoursInSpace
+            json.sort((a, b) => b.hoursInSpace-a.hoursInSpace);
+
             const container = document.getElementById("container");
             const astronautHeading = document.querySelector("h1");
 
@@ -28,6 +31,8 @@ window.addEventListener("load", function() {
                         </div>
                     `
             }
+
+            console.log(json);
         });
     });
 });
